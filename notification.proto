@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "pkg/genproto";
+option go_package = "internal/pkg/genproto";
 
 package proto;
 
