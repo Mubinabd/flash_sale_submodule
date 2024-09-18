@@ -3,9 +3,9 @@ syntax = "proto3";
 option go_package = "internal/pkg/genproto";
 
 package proto;
-import "products.proto";
-import "flash_sales.proto";
-import "common.proto";
+import "flash_sale_submodule/products.proto";
+import "flash_sale_submodule/flash_sales.proto";
+import "flash_sale_submodule/common.proto";
 
 service FlashSaleProductService{
     rpc CreateFlashSaleProduct(CreateFlashSaleProductReq) returns (Void);

@@ -4,9 +4,9 @@ option go_package = "internal/pkg/genproto";
 
 package proto;
 
-import "common.proto";
-import "user.proto";
-import "flash_sales.proto";
+import "flash_sale_submodule/common.proto";
+import "flash_sale_submodule/user.proto";
+import "flash_sale_submodule/flash_sales.proto";
 
 service OrderService{
     rpc CreateOrder(CreateOrderReq) returns (Void);

@@ -4,9 +4,9 @@ option go_package = "internal/pkg/genproto";
 
 package proto;
 
-import "common.proto";
-import "user.proto";
-import "orders.proto";
+import "flash_sale_submodule/common.proto";
+import "flash_sale_submodule/user.proto";
+import "flash_sale_submodule/orders.proto";
 
 service TransactionService {
     rpc CreateTransaction(TransactionCreateReq) returns (Void);

@@ -4,7 +4,7 @@ option go_package = "internal/pkg/genproto";
 
 package proto;
 
-import "common.proto";
+import "flash_sale_submodule/common.proto";
 
 service FlashSaleService{
     rpc CreateFlashSale(CreateFlashSalesReq) returns (Void);
