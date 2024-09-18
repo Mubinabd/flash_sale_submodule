@@ -20,7 +20,7 @@ message NotificationCreate {
     string status = 4;
 }
 message NotificationUpt {
-    string Message = 1;
+    string Content = 1;
     string Status = 2;
 }
 message NotificationUpdate {
