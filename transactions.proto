@@ -5,7 +5,7 @@ option go_package = "internal/pkg/genproto";
 package proto;
 
 import "flash_sale_submodule/common.proto";
-import "flash_sale_submodule/user.proto";
+import "flash_sale_submodule/flash_sales_product.proto";
 import "flash_sale_submodule/products.proto";
 
 service TransactionService {
@@ -20,7 +20,7 @@ message TransactionCreateReq {
     string product_id = 1;
     float amount = 2;
     string type = 3;
-    string user_id = 4;
+    string flash_sale_id = 4;
 }
 
 message TransactionGetRes {
@@ -28,11 +28,11 @@ message TransactionGetRes {
     Products products = 2;
     float amount = 3;
     string type = 4;
-    UserRes user = 5;
+    FlashSaleProduct flash_sale = 5;
 }
 
 message TransactionListReq {
-    string userId = 1;
+    string flash_sale_id = 1;
     float amount_from = 2;
     float amount_to = 3;
     string type = 4;
