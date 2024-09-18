@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+option go_package = "pkg/genproto";
+
+package proto;
+
+import "common.proto";
+import "user.proto";
+import "flash_sales.proto";
+
+service OrderService{
+    rpc CreateOrder(CreateOrderReq) returns (Void);
+    rpc UpdateOrder(UpdateOrderReq) returns (Void);
+    rpc ListAllOrders(ListAllOrdersReq) returns (ListAllOrdersRes);
+    rpc GetOrder(GetById) returns (Order);
+    rpc DeleteOrder(GetById) returns (Void);
+}
+message CreateOrderReq{
+    string userID = 1;
+    string flashSaleID = 2;
+    string order_status = 3;
+}
+
+message UpdateOrderReq{
+    string id = 1;
+    UpdateOrder body = 2;
+}
+
+message UpdateOrder{
+    string userID = 1;
+    string flashSaleID = 2;
+    string order_status = 3;
+}
+
+message Order{
+    string id = 1;
+    UserRes user = 2;
+    FlashSale flashSaleID = 3;
+    string order_status = 4;
+    string created_at = 5;
+}
+
+message ListAllOrdersReq{
+    Pagination Filter = 1;
+    string userID = 2;
+    string order_status = 3;
+}
+
+message ListAllOrdersRes{
+    repeated Order orders = 1;
+    int64 total_count = 2;
+    int32 limit = 3;
+    int32 offset = 4;
+}

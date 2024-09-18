@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+option go_package = "pkg/genproto";
+
+package proto;
+
+import "common.proto";
+
+service FlashSaleService{
+    rpc CreateFlashSale(CreateFlashSalesReq) returns (Void);
+    rpc UpdateFlashSale(UpdateFlashSalesReq) returns (Void);
+    rpc ListAllFlashSales(ListAllFlashSalesReq) returns (ListAllFlashSalesRes);
+    rpc GetFlashSale(GetById) returns (FlashSale);
+    rpc DeleteFlashSale(GetById) returns (Void);
+}
+message CreateFlashSalesReq{
+    string name = 1;
+    string start_time = 2;
+    float end_time = 3;
+    string status = 4;
+}
+
+message UpdateFlashSalesReq{
+    string id = 1;
+    UpdateFlashSale body = 2;
+}
+message UpdateFlashSale{
+    string name = 1;
+    string start_time = 2;
+    float end_time = 3;
+    string status = 4;
+}
+
+message FlashSale{
+    string id = 1;
+    string name = 2;
+    string start_time = 3;
+    float end_time = 4;
+    string status = 5;
+    string created_at = 6;
+}
+
+message ListAllFlashSalesReq{
+    Pagination Filter = 1;
+    string name = 2;
+    string status = 3;
+}
+
+message ListAllFlashSalesRes{
+    repeated FlashSale flash_sales = 1;
+    int64 total_count = 2;
+    int32 limit = 3;
+    int32 offset = 4;
+}
