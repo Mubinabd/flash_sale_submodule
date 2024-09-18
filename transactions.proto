@@ -5,7 +5,7 @@ option go_package = "internal/pkg/genproto";
 package proto;
 
 import "flash_sale_submodule/common.proto";
-import "flash_sale_submodule/flash_sales_product.proto";
+import "flash_sale_submodule/flash_sales_products.proto";
 import "flash_sale_submodule/products.proto";
 
 service TransactionService {
