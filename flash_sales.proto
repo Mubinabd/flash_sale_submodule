@@ -16,7 +16,7 @@ service FlashSaleService{
 message CreateFlashSalesReq{
     string name = 1;
     string start_time = 2;
-    float end_time = 3;
+    string end_time = 3;
     string status = 4;
 }
 
@@ -27,7 +27,7 @@ message UpdateFlashSalesReq{
 message UpdateFlashSale{
     string name = 1;
     string start_time = 2;
-    float end_time = 3;
+    string end_time = 3;
     string status = 4;
 }
 
@@ -35,7 +35,7 @@ message FlashSale{
     string id = 1;
     string name = 2;
     string start_time = 3;
-    float end_time = 4;
+    string end_time = 4;
     string status = 5;
     string created_at = 6;
 }
