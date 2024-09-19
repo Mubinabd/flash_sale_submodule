@@ -16,9 +16,8 @@ service OrderService {
     rpc DeleteOrder(GetById) returns (Void);
 
     rpc GetOrderHistory(OrderHistoryReq) returns (OrderHistoryRes); 
-    rpc TrackOrderStatus(GetById) returns (OrderStatusRes); 
     rpc CancelOrder(GetById) returns (CancelOrderRes);
-    rpc RequestRefund(GetById) returns (RefundRes); 
+  
 }
 
 // Messages
@@ -70,19 +69,8 @@ message OrderHistoryRes {
     int64 total_count = 2;
 }
 
-message OrderStatusRes {
-    string order_status = 1;
-    string estimated_delivery = 2;
-    string current_location = 3;
-}
-
 message CancelOrderRes {
     string cancellation_status = 1;
     string refund_status = 2;
 }
 
-message RefundRes {
-    string refund_id = 1;
-    string refund_status = 2;
-    string refund_amount = 3;
-}
