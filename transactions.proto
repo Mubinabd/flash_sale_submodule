@@ -18,7 +18,7 @@ service TransactionService {
 
 message TransactionCreateReq {
     string product_id = 1;
-    int32 amount = 2;
+    float amount = 2;
     string type = 3;
     string flash_sale_id = 4;
 }
@@ -26,15 +26,15 @@ message TransactionCreateReq {
 message TransactionGetRes {
     string id = 1;
     Products products = 2;
-    int32 amount = 3;
+    float amount = 3;
     string type = 4;
     FlashSaleProduct flash_sale = 5;
 }
 
 message TransactionListReq {
     string flash_sale_id = 1;
-    int32 amount_from = 2;
-    int32 amount_to = 3;
+    float amount_from = 2;
+    float amount_to = 3;
     string type = 4;
     string product_id = 5;
     Pagination Filter = 6;
@@ -45,14 +45,14 @@ message TransactionListRes {
 }
 
 message BalanceGetRes {
-    int32 balance = 1;
+    float balance = 1;
     bool get_usage = 2;
     Stats usage = 3;
 
     message Stats {
-        int32 products_spendings = 2;
-        int32 flash_sale_spendings = 3;
-        int32 payments = 4;   
+        float products_spendings = 2;
+        float flash_sale_spendings = 3;
+        float payments = 4;   
     }
 }
 
