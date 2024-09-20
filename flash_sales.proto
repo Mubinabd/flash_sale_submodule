@@ -5,6 +5,7 @@ option go_package = "internal/pkg/genproto";
 package proto;
 
 import "flash_sale_submodule/common.proto";
+import "flash_sale_submodule/products.proto";
 
 service FlashSaleService {
     rpc CreateFlashSale(CreateFlashSalesReq) returns (Void);
@@ -26,7 +27,8 @@ message CreateFlashSalesReq {
     string start_time = 2;
     string end_time = 3;
     string status = 4;
-    string productID = 5; 
+    string productID = 5;
+    Products products = 6; 
 }
 
 message UpdateFlashSalesReq {
