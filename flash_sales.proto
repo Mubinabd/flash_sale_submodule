@@ -28,7 +28,6 @@ message CreateFlashSalesReq {
     string end_time = 3;
     string status = 4;
     string productID = 5;
-    Products products = 6; 
 }
 
 message UpdateFlashSalesReq {
